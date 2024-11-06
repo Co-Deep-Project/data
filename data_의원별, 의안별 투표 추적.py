@@ -1,6 +1,5 @@
 # 국회의원 본회의 표결정보 (의원별, 의안별 투표 추적)
 # 요청주소 : https://open.assembly.go.kr/portal/openapi/nojepdqqaweusdfbi
-# 인증키 : 70d8db9c548f4ea0b9f7ea947fe662ab
 
 import sqlite3
 import requests
@@ -8,7 +7,7 @@ from datetime import datetime
 
 # API 요청에 필요한 정보
 api_url = "https://open.assembly.go.kr/portal/openapi/nojepdqqaweusdfbi"
-key = "70d8db9c548f4ea0b9f7ea947fe662ab" 
+key = "..." 
 type_format = "json"
 age = "22"
 pSize = 100
