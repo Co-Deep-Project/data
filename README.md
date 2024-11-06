@@ -1,5 +1,4 @@
-# data
-# 대한민국 국회 open ai access
+# 대한민국 국회 open ai access guide
 
 인증키 : 70d8db9c548f4ea0b9f7ea947fe662ab
 
