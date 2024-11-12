@@ -1,6 +1,6 @@
 # 정책 일관성 평가
 # 국회의원 발의법률안
-# https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OPR1MQ000998LC12535
+# https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OK7XM1000938DS17215#
 # 요청주소 : https://open.assembly.go.kr/portal/openapi/nzmimeepazxkubdpn
 
 import requests
