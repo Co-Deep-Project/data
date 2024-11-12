@@ -44,7 +44,7 @@ def fetch_bills_proposed_by_member(member_name, api_key):
         'pIndex': 1,
         'pSize': 100,
         'PROPOSER': member_name,
-        'AGE': '21'  # 21대 국회
+        'AGE': '22'  # 22대 국회
     }
 
     response = requests.get(url, params=params)
