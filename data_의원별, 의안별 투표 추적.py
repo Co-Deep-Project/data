@@ -1,4 +1,5 @@
 # 국회의원 본회의 표결정보 (의원별, 의안별 투표 추적)
+# https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OPR1MQ000998LC12535
 # 요청주소 : https://open.assembly.go.kr/portal/openapi/nojepdqqaweusdfbi
 
 import sqlite3
