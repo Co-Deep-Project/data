@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국회의원 표결 및 발의 법안 조회</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .card { border: 1px solid #ddd; padding: 20px; margin: 10px 0; }
+        h2 { color: #007bff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        button { margin-top: 10px; padding: 8px 12px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>국회의원 표결 및 발의 법안 조회</h1>
+    <label for="mona_cd">국회의원 코드 선택:</label>
+    <select id="mona_cd">
+        <option value="ZYP7962W">의원 A</option>
+        <option value="OTHER_MONA_CD">의원 B</option>
+    </select>
+    <button onclick="fetchAndDisplayVoteData()">표결 데이터 조회</button>
+    <div id="result"></div>
+
+    <script>
+        const apiKey = "your_api_key"; // 실제 API 키로 변경 필요
+        const apiUrlVote = "https://open.assembly.go.kr/portal/openapi/nojepdqqaweusdfbi";
+        const age = "21";
+        const pSize = 100;
+
+        // 국회의원 표결 데이터 가져와서 화면에 표시
+        async function fetchVoteData(monaCd, pIndex = 1) {
+            const response = await fetch(`${apiUrlVote}?Key=${apiKey}&Type=json&AGE=${age}&MONA_CD=${monaCd}&pIndex=${pIndex}&pSize=${pSize}`);
+            if (response.ok) {
+                const data = await response.json();
+                return data.response ? data.response.item : [];
+            } else {
+                console.error("API 요청 실패:", response.status);
+                return [];
+            }
+        }
+
+        // 표결 데이터를 가져와 화면에 표시하는 함수
+        async function fetchAndDisplayVoteData() {
+            const monaCd = document.getElementById("mona_cd").value;
+            let pIndex = 1;
+            let allVotes = [];
+
+            while (true) {
+                const items = await fetchVoteData(monaCd, pIndex);
+                if (items.length === 0) break;
+                allVotes = allVotes.concat(items);
+                pIndex += 1;
+            }
+
+            displayData(allVotes);
+        }
+
+        // 데이터를 화면에 표시
+        function displayData(items) {
+            if (items.length === 0) {
+                document.getElementById("result").innerHTML = "<p>표결 데이터가 없습니다.</p>";
+                return;
+            }
+
+            let output = `<h2>표결 데이터 조회 결과</h2>`;
+            output += `<table><tr><th>표결일</th><th>의안 번호</th><th>법안명</th><th>표결 결과</th></tr>`;
+            items.forEach(item => {
+                output += `<tr>
+                    <td>${item.VOTE_DATE}</td>
+                    <td>${item.BILL_NO}</td>
+                    <td>${item.BILL_NAME}</td>
+                    <td>${item.RESULT_VOTE_MOD}</td>
+                </tr>`;
+            });
+            output += `</table>`;
+            document.getElementById("result").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
