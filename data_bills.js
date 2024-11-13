@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 
 const app = express();
 const PORT = 3000;
-const API_KEY = '70d8db9c548f4ea0b9f7ea947fe662ab'; // 실제 API 키로 교체
+const API_KEY = '###'; // 실제 API 키로 교체
 const MEMBER_NAME = '곽상언'; // 국회의원 이름
 
 // 국회의원이 발의한 법률안 데이터 가져오기
