@@ -22,7 +22,7 @@ def get_all_bill_ids():
     
     while True:
         bill_params["pIndex"] = pIndex
-        response = requests.get(BILL_LIST_URL, params=bill_params, timeout=10)
+        response = requests.get(BILL_LIST_URL, params=bill_params, timeout=30)
         
         if response.status_code == 200:
             bill_data = response.json()
