@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const app = express();
 const port = 3000;
-const API_KEY = '70d8db9c548f4ea0b9f7ea947fe662ab';
+const API_KEY = '###';
 const BILL_LIST_URL = 'https://open.assembly.go.kr/portal/openapi/nwbpacrgavhjryiph';
 const VOTE_URL = 'https://open.assembly.go.kr/portal/openapi/nojepdqqaweusdfbi';
 
