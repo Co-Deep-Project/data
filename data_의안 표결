@@ -10,7 +10,7 @@ const BILL_LIST_URL = 'https://open.assembly.go.kr/portal/openapi/nwbpacrgavhjry
 const VOTE_URL = 'https://open.assembly.go.kr/portal/openapi/nojepdqqaweusdfbi';
 
 // 국회 회기 정보와 의원 코드 설정
-const SESSION_NUMBER = 21; // 예: 21대 국회
+const SESSION_NUMBER = 22; // 예: 22대 국회
 const MEMBER_CODE = 'JNL7001A'; // 곽상언 의원의 MONA_CD
 
 // 특정 회기의 법률안 목록을 가져오는 함수
