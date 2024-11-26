@@ -1,7 +1,9 @@
 1. data_bills : 국회의원 발의 법안 추적
 
 2. data_votes : 국회의원 의안 표결 추적
+   1) 
+   2) 국회의원 본회의 표결정보 : https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OPR1MQ000998LC12535
 
-3. data_종로구공약크롤링 : 종로구 열린구청장실 공약 현황 크롤링
+4. data_종로구공약크롤링 : 종로구 열린구청장실 공약 현황 크롤링
 
-4. data_chatbot : 네이버뉴스 api, openai api
+5. data_chatbot : 네이버뉴스 api, openai api
