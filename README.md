@@ -1,5 +1,5 @@
 1. data_bills : 국회의원 발의 법안 추적
-  https://open.assembly.go.kr/portal/data/service/selectServicePage.do
+    https://open.assembly.go.kr/portal/data/service/selectServicePage.do/OK7XM1000938DS17215
 
 3. data_votes : 국회의원 의안 표결 추적
    1) 의안 ID 리스트 : https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OND1KZ0009677M13515
